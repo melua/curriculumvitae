@@ -1,0 +1,438 @@
+\documentclass[a4paper,oneside]{article}
+%\usepackage[francais,english]{babel}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{avant}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{includes/vmargin}
+\usepackage{includes/shading}
+\usepackage{includes/wrapfig}
+\usepackage{floatflt}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{marvosym}
+\usepackage{color}
+\definecolor{bleu}{RGB}{0, 102, 161}
+\definecolor{noir}{RGB}{0, 0, 0}
+\definecolor{turquoise}{RGB}{0, 178, 169}
+\definecolor{mauve}{RGB}{166, 38, 170}
+\definecolor{indigo}{RGB}{102, 57, 183}
+\definecolor{vert}{RGB}{174, 164, 0}
+\definecolor{orange}{RGB}{255, 99, 25}
+\definecolor{gris}{RGB}{128, 128, 128}
+%\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\setmarginsrb{2cm}{1.2cm}{2cm}{1.2cm}{0cm}{0cm}{0cm}{0cm}
+\usepackage{eso-pic}
+\usepackage{fix-cm}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    LANGAGE & CONFIDENTIALITE     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage[french, private]{optional}
+%\usepackage[french, public]{optional}
+%\usepackage[english, private]{optional}
+%\usepackage[english, public]{optional}
+
+\usepackage[french]{optional}
+%\usepackage[english]{optional}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Définition de quelques macros    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+% ligne horizontale sur toute la page. Usage : \ligne{Largeur}
+\newcommand{\ligne}[1]{\rule[0.5ex]{\textwidth}{#1}\\}
+\newcommand{\interRubrique}{\bigskip}
+\newcommand{\styleRub}[1]{\noindent\textbf{\large #1}\par}
+\newcommand{\indentStd}{\noindent\hspace{\lenA}}
+
+\newcommand*\openquote{\makebox(25,-12){\scalebox{5}{\fontfamily{fvs}\selectfont\color{bleu}``}}}
+\newcommand*\closequote{\makebox(25,-22){\scalebox{5}{\fontfamily{fvs}\selectfont\color{bleu}''}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dotfill customisés               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand \dotfill {\color{bleu} \leavevmode \cleaders \hb@xt@ 1.5em{\hss \Circsteel\hss }\hfill \kern \z@}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Commandes Personnalisées    	  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+% Personnalisation du titre avec un cadre grisé.
+\newcommand{\mytitle}[1]{
+    \begin{center}
+    {\Huge \parashade[.9]{sharpcorners}{\textbf{\color{orange}\textsc{#1 \vphantom{p\^{E}}}}}}
+    \end{center}
+}
+ 
+
+\newenvironment{rubrique}[2][\linewidth] {
+    \styleRub{#2}
+    \setlength{\lenB}{#1}
+    \setlength{\lenC}{\linewidth}
+    \addtolength{\lenC}{-\lenA}
+    \addtolength{\lenC}{-\lenB}
+    \addtolength{\lenC}{-\parindent}
+    \addtolength{\lenC}{-9pt}
+    \indentStd\begin{tabular}[t]{p{\lenB}p{\lenC}}
+}
+{\end{tabular}}
+ 
+\newenvironment{header}[2][\linewidth] {
+    \styleRub{#2}
+    \setlength{\lenB}{#1}
+    \setlength{\lenC}{\linewidth}
+    \addtolength{\lenC}{-\lenA}
+    \addtolength{\lenC}{-\lenB}
+    \addtolength{\lenC}{-\parindent}
+    \addtolength{\lenC}{-9pt}
+    \indentStd\begin{tabular}[t]{p{\lenB}ll}
+}
+{\end{tabular}}
+
+%\newlength\heightconf
+%\newlength\widthconf
+%\newcommand\confidentiel[1]{%
+%\opt{public}{%
+% \settoheight{\heightconf}{#1}%
+% \settowidth{\widthconf}{#1}%
+% \tikz{\node[inner sep=0pt,rectangle,draw,anchor=base,text height=\heightconf,text width=\widthconf,fill=black]{};}%
+%\#\#~\#\#}%
+%\opt{private}{#1}}
+
+
+\newcommand\translate[2]{%
+\opt{french}{#1}\opt{english}{#2}}
+
+
+\newcommand\environment[1]{%
+\emph{Technologies} : #1.}
+
+\newcommand\poi[1]{%
+#1.}
+
+
+\newcommand{\yy}{\number\numexpr\year-2000}
+
+%\newcommand\BackgroundFirstPage{
+%\put(70,\translate{-118}{-100}){
+%\parbox[b][\paperheight]{\paperwidth}{%
+%\vfill
+%\centering
+%\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{images/background1}%
+%\vfill
+%}}}
+
+%\newcommand\BackgroundSecondPage{
+%\put(70,-430){
+%\parbox[b][\paperheight]{\paperwidth}{%
+%\vfill
+%\centering
+%\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{images/background2}%
+%\vfill
+%}}}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Commandes utilisables dans le descriptif %
+%					   					   %
+% Modifiables à loisir... 		           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\newcommand{\lieu}[1]{\textcolor{gris}{- \small{\textsl{#1}\ }}}
+\newcommand{\activite}[1]{\textcolor{orange}{\textbf{#1}\ }}
+\newcommand{\diplome}[1]{\textcolor{noir}{\textbf{#1}\ }}
+\newcommand{\comment}[1]{\textcolor{gris}{\small{\textsl{#1}\ }}}
+\newcommand{\intitule}[1]{\textcolor{orange}{\textbf{#1}\ }}
+\newcommand{\benevolat}[1]{\textcolor{orange}{\textbf{#1}\ }}
+\newcommand{\stage}[1]{\textcolor{orange}{\textbf{#1}\ }}
+\newcommand{\effectif}[1]{\small{\textsc{#1 pers.}}\ }
+ 
+\newcommand{\comp}[1]{\textcolor{vert}{\large{#1}\ }}
+\newcommand{\compp}[1]{\textcolor{turquoise}{\Large{#1}\ }}
+\newcommand{\comppp}[1]{\textcolor{mauve}{\LARGE{#1}\ }}
+
+%
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Début du CV proprement dit (ouf ! :) ) %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\pagestyle{empty} % pour ne pas indiquer de numéro de page...
+\begin{document}
+%\AddToShipoutPicture*{\BackgroundFirstPage}
+\newlength{\lenA} % indentation au début d'une ligne
+\setlength{\lenA}{0.cm}
+\newlength{\lenB} % Taille champ dates
+\newlength{\lenC} % Taille champ description
+ 
+ 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% en-tête 			            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\begin{floatingfigure}[r]{4cm}
+\centering
+\vspace{2em}
+\textbf{Tours, FRANCE} \\
+\textbf{\href{mailto:kguignard\yy@melua.fr}{kguignard\yy@melua.fr}} \\
+\textbf{\href{https://linkedin.com/in/kguignard}{linkedin.com/in/kguignard}} \\
+\textbf{\href{https://melua.fr}{melua.fr}} \\
+\vspace{1em}
+\includegraphics[width=2.5cm]{images/qrcode3} % qrcode-monkey.com
+\end{floatingfigure}
+
+\begin{header}[14cm]{}		
+    \textbf{\fontsize{47}{50}\selectfont \color{bleu} Kévin Guignard} \\
+    \textbf{\fontsize{42}{45}\selectfont \color{orange} \translate{Ingénieur Étude}{Software}} \\
+    \textbf{\fontsize{40}{45}\selectfont \color{orange} \translate{\& Développement}{\hspace{3em} Engineer}}
+\end{header}
+
+%%%%%%%%%%%%%%%%%%
+% Bloc rubriques %
+%%%%%%%%%%%%%%%%%%
+
+\vfill
+
+\begin{rubrique}[2.8cm]{}
+\ligne{0.0mm}
+    \begin{wrapfigure}{r}{2.65cm}\vspace{-35pt}\includegraphics[width=2.8cm]{images/moi2016}\end{wrapfigure}
+    & \openquote\translate{Passionné d'informatique et de nouvelles technologies, je cherche des opportunités de développer mes expériences et de mettre à profit mes compétences, notamment autour des technologies .NET et Java.}{I'm always looking for new opportunities to improve my skills and experience in a IT company. I'm someone passionate in computer science and new technologies, and especially the .NET and Java technologies.}\closequote
+\\
+\\
+\end{rubrique}
+
+\interRubrique
+\interRubrique
+\interRubrique
+
+% SAVOIR
+\begin{rubrique}[3.4cm]{\translate{Compétences}{Skills}\hspace{1em}\dotfill}
+\ligne{0.0mm}
+    \translate{Langages}{Languages}
+    & \compp{C\#} \comppp{Java} VB C \comp{PL/SQL} JSP \compp{PHP} ASP HTML \comp{JS} CSS XML \\
+    \translate{Frameworks}{Frameworks}
+    & \compp{.NET} \comp{JPA} xUnit \comppp{Java EE} WCF \comp{OpenEJB} Spring \\
+    \translate{Systèmes}{Systems}
+    & \compp{AlpineLinux} NetBSD \comp{RedHat} \comppp{Debian} ArchLinux \\
+	\translate{Bases de données}{Databases}
+    & \comppp{MariaDB} \comp{MySQL} Oracle \\
+	\translate{Serveurs}{Servers}
+    & JBoss \compp{Tomcat} HAProxy \comppp{Nginx} Apache \comp{Bind} Memcached \\
+    \translate{Dév. collaboratif}{Collaborative dev.}
+    & \comp{Subversion} \comppp{Git} Sonar \compp{Jenkins} \\
+    \translate{IDE}{IDE}
+    & \compp{Visual Studio} \comppp{Eclipse} Project \comp{Selenium} \\
+	\translate{Protocoles}{Protocols}
+    & \comp{SSH} IMAP \comppp{HTTP} \compp{TLS} SMTP \\
+    \translate{Gestion de Projet}{Project Mgmt}
+    & PMI \compp{UML} Merise MARP \comp{AGILE} Gantt PERT \\
+    \translate{Autres}{Others}
+    & \compp{Maven} NSIS \comppp{REST} DNSSEC \comp{LaTeX} PKCS \\
+\end{rubrique}
+
+\interRubrique
+\interRubrique
+\interRubrique
+
+% SAVOIR-FAIRE
+\begin{rubrique}[3.4cm]{\translate{Expériences}{Career}\hspace{1em}\dotfill}
+\ligne{0.0mm}
+    08/2018 -- \translate{Actuel}{Present}
+    \begin{wrapfigure}{r}{3.5cm}\href{https://www.cat-amania.fr}{\includegraphics[width=2.2cm]{images/catamania} \includegraphics[width=1cm]{images/imdeo}}\end{wrapfigure}
+    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{IMDEO}\\
+    & \translate{Analyser les remontées de bug et élaborer les correctifs. Réaliser la maintenance applicative et développer les évolutions du système d'information.}{Analyzed bug reports and created fixes. Operated the application maintenance and developed the evolutions of the information system.} \\
+    & \environment{RedHat, Tomcat, Java EE, Spring, Oracle} \effectif{12} \\
+    \\
+    \\
+
+    12/2018 -- 07/2019
+    \begin{wrapfigure}{r}{3.5cm}\href{https://www.cat-amania.fr}{\includegraphics[width=2.2cm]{images/catamania} \includegraphics[width=1.1cm]{images/porsche}}\end{wrapfigure}
+    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{Porsche}\\
+    & \translate{Réaliser un site de réservation basé sur une architecture en micro-services. Configurer les environnements d'intégration, recette et production.}{Developed a reservation booking website backed with micro-services architecture. Set up the integration, acceptance and production environments.} \\
+    & \environment{Debian, Apache, Java EE, SpringBoot, Angular, PHP} \effectif{8} \\
+    \\
+\end{rubrique}
+
+\vfill
+\begin{center}
+{\footnotesize
+\thepage~/~3}
+\end{center}
+\newpage
+%\AddToShipoutPicture*{\BackgroundSecondPage}
+
+\begin{rubrique}[3.4cm]{Kévin GUIGNARD \hfill}
+\end{rubrique}
+
+\interRubrique
+\interRubrique
+
+% SAVOIR-FAIRE
+\begin{rubrique}[3.4cm]{\translate{Expériences (suite)}{Career (suite)}\hspace{1em}\dotfill}
+\ligne{0.0mm}
+    06/2017 -- 08/2018
+    \begin{wrapfigure}{r}{3.6cm}\href{https://www.cat-amania.fr}{\includegraphics[width=2.2cm]{images/catamania} \includegraphics[width=1cm]{images/mgen}}\end{wrapfigure}
+    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{MGEN}\\
+    & \translate{Assurer le support technique à la numérisation des documents de soins. Développer les services web pour la gestion électronique des documents.}{Provided technical support for the digitization of care related documents. Developed the web services for document management system.} \\
+    & \environment{Windows, Java EE, Sonar} \effectif{5} \\
+    \\
+    \\
+
+    02/2013 -- 06/2017
+    \begin{wrapfigure}{r}{3cm}\href{http://www.worldline.com}{\includegraphics[width=2.8cm]{images/worldline}}\end{wrapfigure}
+    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{Worldline}\\
+	& \translate{Élaborer et diriger le développement d'une solution de tests automatisés permettant l'exécution et le suivi quotidien des tests de non régression.}{Designed, implemented and leaded the development of a functional testing automation engine, for daily monitoring of regression tests.} \\
+    & \environment{RedHat, JBoss, Java EE, Git, Selenium} \effectif{12} \\
+    \\
+\end{rubrique}
+
+\interRubrique
+\interRubrique
+\interRubrique
+
+\begin{rubrique}[3.4cm]{\translate{Stages}{Traineeship}\hspace{1em}\dotfill}
+\ligne{0.0mm}
+    04/2012 -- 07/2012
+    \begin{wrapfigure}{r}{2.5cm}\href{http://www.gfi.fr}{\includegraphics[width=2cm]{images/gfi}}\end{wrapfigure}
+    & \stage{\translate{Développeur .NET}{.NET Developer}} \lieu{GFI Informatique}\\
+    & \translate{Élaborer l'architecture et développer une application de gestion.}{Designed the architecture and developed an management application.} \\
+    & \environment{C\#, ASP.NET, Linq, NHibernate, Oracle} \effectif{5} \\
+    \\
+    \\
+
+    01/2011 -- 05/2011
+    \begin{wrapfigure}{r}{2.5cm}\href{http://fr.atos.net}{\includegraphics[width=1.6cm]{images/atos}}\end{wrapfigure}
+    & \stage{\translate{Développeur Java}{Java Developer}} \lieu{Atos}\\
+    & \translate{Mettre en place un serveur d'intégration continue et automatiser les tests.}{Set up a continuous integration server and automated tests.} \\
+    & \environment{Java SE, JUnit, Hudson, Sonar, Selenium} \effectif{4} \\
+    \\
+    \\
+
+    06/2010 -- 09/2010
+    \begin{wrapfigure}{r}{2.5cm}\href{http://www.groupe-partnaire.fr}{\includegraphics[width=1.6cm]{images/partnaire}}\end{wrapfigure}
+    & \stage{\translate{Analyste Développeur PHP}{PHP Developer Analyst}} \lieu{Groupe Partnaire}\\
+    & \translate{Élaborer un cahier des charges fonctionnel et mettre en place un site web.}{Wrote functional specifications and developed a website.} \\
+    & \environment{PHP, CSS, XML, MySQL} \effectif{2} \\
+    \\
+    \\
+
+    09/2009 -- 12/2009
+    \begin{wrapfigure}{r}{2cm}\href{http://www.lisica.fr}{\includegraphics[width=1cm]{images/lisica}}\end{wrapfigure}
+    & \stage{\translate{Développeur .NET}{.NET Developer}} \lieu{Lisica Informatique}\\
+    & \translate{Concevoir et réaliser une interface logicielle.}{Designed and created a software user interface.}\\
+    & \environment{VB.NET} \effectif{1} \\
+    \\
+\end{rubrique}
+
+\vfill
+\begin{center}
+{\footnotesize
+\thepage~/~3}
+\end{center}
+\newpage
+%\AddToShipoutPicture*{\BackgroundSecondPage}
+
+\begin{rubrique}[3.4cm]{Kévin GUIGNARD \hfill}
+\end{rubrique}
+
+\interRubrique
+\interRubrique
+
+\begin{rubrique}[3.4cm]{\translate{Projets personnels}{Personal projects}\hspace{1em}\dotfill}
+\ligne{0.0mm}
+
+    03/2017 -- \translate{Actuel}{Present}
+    \begin{wrapfigure}{r}{2.2cm}\href{https://www.ip-signal.com}{\includegraphics[width=1.2cm]{images/alpine}}\end{wrapfigure}
+    & \benevolat{\translate{Administrateur GNU/Linux}{GNU/Linux Administrator}}\\
+    & \translate{Élaborer un service automatisé de monitoring de site web.}{Developed a platform of monitoring-as-a-service.} \\
+    & \environment{Alpine, OpenSMTPD, TomEE, Java EE, Memcached} \effectif{1} \\
+    \\
+    \\
+
+    04/2015 -- 03/2017
+    \begin{wrapfigure}{r}{2.1cm}\includegraphics[width=1cm]{images/java}\end{wrapfigure}
+    & \benevolat{\translate{Développeur Java RESTful}{Java RESTful Developer}}\\
+    & \translate{Élaborer un site web basé sur une architecture scalable en micro-services.}{Developed a website based on a scalable architecture with micro-services.} \\
+    & \environment{Java EE, Tomcat, OpenEJB, Nginx, EmberJS} \effectif{1} \\
+    \\
+    \\
+
+    09/2010 -- 03/2015
+    \begin{wrapfigure}{r}{2cm}\href{https://vae-soli.fr}{\includegraphics[width=0.8cm]{images/debian}}\end{wrapfigure}
+    & \benevolat{\translate{Administrateur GNU/Linux}{GNU/Linux Administrator}}\\
+    & \translate{Installer, configurer, sécuriser et maintenir un serveur dédié et ses services.}{Installed, configured, secured and maintained a server and its services.} \\
+    & \environment{Debian, Java SE, Nginx, Apache, PHP, MySQL} \effectif{3} \\
+    \\
+\end{rubrique}
+
+\interRubrique
+\interRubrique
+\interRubrique
+
+\begin{rubrique}[2.4cm]{\translate{Formation}{Education}\hspace{1em}\dotfill}
+%\ligne{0.0mm}
+	& \begin{floatingfigure}[r]{3cm}
+		\vspace{25px}
+		\centering
+		\href{http://www.exia.cesi.fr/}{\includegraphics[width=3cm]{images/cesiexia}}
+	  \end{floatingfigure} \\
+    2012 - 2013
+    & \diplome{\href{http://www.rncp.cncp.gouv.fr/grand-public/visualisationFiche?format=fr\&fiche=11554}{Manager des Systèmes d'Information}} \\
+    & \comment{RNCP niv. I -- Bac+5} \\
+    2010 - 2012
+    & \diplome{\href{http://www.rncp.cncp.gouv.fr/grand-public/visualisationFiche?format=fr\&fiche=14506}{Responsable en Ingénierie des Logiciels}} \\
+    & \comment{RNCP niv. II -- Bac+4} \\
+    2008 - 2010
+    & \diplome{\href{http://www.rncp.cncp.gouv.fr/grand-public/visualisationFiche?format=fr\&fiche=13659}{Analyste Programmeur}} \\
+     & \comment{RNCP niv. III -- Bac+2} \\
+\end{rubrique}
+
+\interRubrique
+\interRubrique
+\interRubrique
+
+\begin{rubrique}[3.4cm]{\translate{Divers}{Miscellaneous}\hspace{1em}\dotfill}
+\ligne{0.0mm}
+    \translate{Centres d'intérêt}{Interests}
+    & \poi{\translate{Photographie, Géopolitique, Histoire, Logiciels libres, Economie}{Photography, Geopolitics, History, Free Software, Economy}} \\
+    \translate{Loisirs sportifs}{Sports}
+    & \poi{\translate{Course à pied, Vélo, Badminton, Natation}{Running, Badminton, Swimming}} \\
+    \translate{Langue étrangère}{Foreign language}
+    & \poi{\translate{Anglais lu, écrit et parlé (TOEIC 840/990)}{Reading, writing and speaking english (TOEIC 840/990)}} \\
+    \translate{Qualités}{Traits}
+    & \poi{\translate{Méthodologie, Autonomie, Adaptabilité}{Methodology, Autonomy, Adaptability}} \\
+    \translate{Transport}{Transport}
+    & \poi{\translate{Permis B et véhicule}{Driving license and car}}
+\end{rubrique}
+
+% SAVOIR-ETRE ? 
+% DEFAUTS ?
+
+\vfill
+\begin{center}
+{\footnotesize
+\thepage~/~3}
+\end{center}
+
+%\begin{figure}[h!]
+%	\centering
+%  	\href{xxx}{\includegraphics[width=1cm]{images/linkedin}}
+%  	\hspace{2em}
+%  	\href{xxx}{\includegraphics[width=1cm]{images/twitter}}
+%  	\hspace{2em}
+%  	\href{xxx}{\includegraphics[width=1cm]{images/viadeo}}
+%\end{figure}
+\end{document}
