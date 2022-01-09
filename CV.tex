@@ -1,6 +1,5 @@
 \documentclass[a4paper,oneside]{article}
-%\usepackage[francais,english]{babel}
-\usepackage[english]{babel}
+\usepackage[french,english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{avant}
@@ -29,6 +28,13 @@
 \usepackage{eso-pic}
 \usepackage{fix-cm}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         FRENCH HYPHENATION       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% to enable enable run
+% initexmf --mklangs
+% initexmf -u
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -165,6 +171,12 @@
 
 %
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      Calcul des années d'expérience    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{exp}
+\setcounter{exp}{\the\year}
+\addtocounter{exp}{-2013}
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Début du CV proprement dit (ouf ! :) ) %
@@ -185,19 +197,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \begin{floatingfigure}[r]{4cm}
 \centering
-\vspace{2em}
+\vspace{1.5em}
 \textbf{Tours, FRANCE} \\
 \textbf{\href{mailto:kguignard\yy@melua.fr}{kguignard\yy@melua.fr}} \\
 \textbf{\href{https://linkedin.com/in/kguignard}{linkedin.com/in/kguignard}} \\
-\vspace{0.5em}
-\includegraphics[width=2.5cm]{images/qrcode3} % qrcode-monkey.com
-\textbf{\href{https://kguignard.xyz}{\color{bleu}kguignard\color{orange}.xyz}}
+%\vspace{0.5em}
+%\includegraphics[width=2.5cm]{images/qrcode3} % qrcode-monkey.com
+%\textbf{\href{https://kguignard.fr}{\color{bleu}kguignard\color{orange}.fr}}
 \end{floatingfigure}
 
-\begin{header}[14cm]{}		
+\begin{header}{}		
     \textbf{\fontsize{47}{50}\selectfont \color{bleu} Kévin Guignard} \\
-    \textbf{\fontsize{42}{45}\selectfont \color{orange} \translate{Ingénieur Étude}{Software}} \\
-    \textbf{\fontsize{40}{45}\selectfont \color{orange} \translate{\& Développement}{\hspace{3em} Engineer}}
+    \textbf{\fontsize{29}{45}\selectfont \color{orange} \translate{Ingénieur Étude \& Développement}{Software Engineer}} \\
+    %\textbf{\fontsize{42}{45}\selectfont \color{orange} \translate{Ingénieur Étude}{Software}} \\
+    %\textbf{\fontsize{40}{45}\selectfont \color{orange} \translate{\& Développement}{\hspace{3em} Engineer}}
 \end{header}
 
 %%%%%%%%%%%%%%%%%%
@@ -208,15 +221,15 @@
 
 \begin{rubrique}[2.8cm]{}
 \ligne{0.0mm}
-    \begin{wrapfigure}{r}{2.65cm}\vspace{-35pt}\includegraphics[width=2.8cm]{images/moi2020}\end{wrapfigure}
-    & \openquote\translate{Passionné d'informatique et de nouvelles technologies, je cherche des opportunités de développer mes expériences et de mettre à profit mes compétences, notamment autour des technologies GNU/Linux et Java.}{I'm always looking for new opportunities to improve my skills and experience in a IT company. I'm someone passionate in computer science and new technologies, and especially the Linux and Java technologies.}\closequote
+    \begin{wrapfigure}{r}{2.35cm}\vspace{-20pt}\includegraphics[width=2.5cm]{images/moi2020}\end{wrapfigure}
+    & \openquote\translate{Passionné d'informatique et de nouvelles technologies et riche de \mbox{\theexp~années} d'expérience professionnelle, je cherche des opportunités de mettre à profit mes compétences et développer mes expériences, notamment autour des technologies GNU/Linux et Java.}{I'm always looking for new opportunities to improve my skills and experience in a IT company. I'm someone passionate in computer science and new technologies, and especially the Linux and Java technologies.}\closequote
 \\
 \\
 \end{rubrique}
 
 \interRubrique
-\interRubrique
-\interRubrique
+%\interRubrique
+%\interRubrique
 
 % SAVOIR
 \begin{rubrique}[3.4cm]{\translate{Compétences}{Skills}\hspace{1em}\dotfill}
@@ -247,12 +260,21 @@
 
 \interRubrique
 \interRubrique
-\interRubrique
+%\interRubrique
 
 % SAVOIR-FAIRE
 \begin{rubrique}[3.4cm]{\translate{Expériences}{Career}\hspace{1em}\dotfill}
 \ligne{0.0mm}
-    07/2021 -- \translate{Présent}{Present}
+    10/2021 -- \translate{Présent}{Present}
+    \begin{wrapfigure}{r}{3.6cm}\href{https://www.cat-amania.fr}{\includegraphics[width=2.2cm]{images/catamania} \includegraphics[width=1cm]{images/mgen}}\end{wrapfigure}
+    & \intitule{\translate{Architecte Logiciel}{Java Lead Developer}} \lieu{MGEN Technologies}\\
+    & \translate{Assurer la maintenance applicative d'un site de réservation.}{Analyzed pending bugs and created fixes.} \\
+    & \translate{Mettre en place les outils de surveillance et de scalabilité de la production.}{Set up tools for the application monitoring and scalability.} \\
+    & \environment{SpringBoot, Go, InfluxDB, Grafana} \effectif{4} \\
+    \\
+    \\
+
+    07/2021 -- 09/2021
     \begin{wrapfigure}{r}{3.5cm}\href{https://www.cat-amania.fr}{\includegraphics[width=2.2cm]{images/catamania} \includegraphics[width=1cm]{images/porsche}}\end{wrapfigure}
     & \intitule{\translate{Lead Développeur Java}{Java Lead Developer}} \lieu{Porsche}\\
     & \translate{Assurer la maintenance applicative d'un site de réservation.}{Analyzed pending bugs and created fixes.} \\
@@ -296,7 +318,7 @@
 
     06/2017 -- 08/2018
     \begin{wrapfigure}{r}{3.6cm}\href{https://www.cat-amania.fr}{\includegraphics[width=2.2cm]{images/catamania} \includegraphics[width=1cm]{images/mgen}}\end{wrapfigure}
-    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{MGEN}\\
+    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{MGEN Technologies}\\
     & \translate{Assurer le support technique à la numérisation des documents de soins. Développer les services web pour la gestion électronique des documents.}{Provided technical support for the digitization of care related documents. Developed the web services for document management system.} \\
     & \environment{Windows, Java EE, Sonar} \effectif{5} \\
     \\
@@ -366,7 +388,7 @@
 \ligne{0.0mm}
 
     09/2010 -- \translate{Présent}{Present}
-    \begin{wrapfigure}{r}{2cm}\href{https://vae-soli.fr}{\includegraphics[width=0.8cm]{images/debian}}\end{wrapfigure}
+    \begin{wrapfigure}{r}{2cm}\href{https://vae-soli.fr}{\includegraphics[width=1.2cm]{images/proxmox}}\end{wrapfigure}
     & \benevolat{\translate{Administrateur GNU/Linux}{GNU/Linux Administrator}}\\
     & \translate{Installer, configurer, sécuriser et maintenir un serveur dédié et ses services.}{Installed, configured, secured and maintained a server and its services.} \\
     & \environment{Proxmox, Alpine, Debian, Java SE, Nginx, PHP, MariaDB} \effectif{3} \\
