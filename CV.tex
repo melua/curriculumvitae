@@ -163,7 +163,7 @@
 \newcommand{\intitule}[1]{\textcolor{orange}{\textbf{#1}\ }}
 \newcommand{\benevolat}[1]{\textcolor{orange}{\textbf{#1}\ }}
 \newcommand{\stage}[1]{\textcolor{orange}{\textbf{#1}\ }}
-\newcommand{\effectif}[1]{\small{\textsc{#1 pers.}}\ }
+\newcommand{\effectif}[1]{\includegraphics[width=0.35cm]{images/people} \small{\textsc{#1 pers.}}\ }
  
 \newcommand{\comp}[1]{\textcolor{vert}{\large{#1}\ }}
 \newcommand{\compp}[1]{\textcolor{turquoise}{\Large{#1}\ }}
@@ -245,7 +245,7 @@
 	\translate{Serveurs web}{Web Servers}
     & \compp{Tomcat} \comppp{Nginx} Apache \\
 	\translate{Serveurs infra.}{Infra. Servers}
-    & \comp{KnotDNS} \compp{OpenSMTPD} Bind \comp{HAProxy} RabbitMQ \\
+    & \comp{KnotDNS} Kafka \compp{OpenSMTPD} Bind \comp{HAProxy} RabbitMQ \\
     \translate{Dév. collaboratif}{Collaborative dev.}
     & \compp{Subversion} \comppp{Git} Scrum \\
     \translate{Intégr. continue}{Continuous integr.}
@@ -269,28 +269,28 @@
 \ligne{0.0mm}
     10/2021 -- \translate{Présent}{Present}
     \begin{wrapfigure}{r}{3.6cm}\href{https://www.cat-amania.fr}{\includegraphics[width=2.2cm]{images/catamania} \includegraphics[width=1cm]{images/mgen}}\end{wrapfigure}
-    & \intitule{\translate{Architecte Logiciel}{Java Architect}} \lieu{MGEN Technologies}\\
+    & \intitule{\translate{Architecte Logiciel}{Java Architect}} \lieu{MGEN Technologies} \effectif{6} \\
     & \translate{Elaborer le socle logiciel d'une architecture de micro-services maillés.}{Develop the software framework of a meshed micro-services architecture.} \\
-    & \translate{Mettre en place l'intégration continue et la concentration des journaux.}{Set up the tools for continuous integration and logs consolidation.} \\
-    & \environment{SpringBoot, GitLab, OpenShift, FileBeat, ELK} \effectif{6} \\
+    & \translate{Mettre en place l'intégration continue, le déploiement continu, la génération automatisée de clients d'API et la concentration des journaux.}{Set up the tools for continuous integration, continuous deployment, API client automated generation and logs consolidation.} \\
+    & \environment{SpringBoot, GitLab, OpenShift, FileBeat, ELK, Kafka} \\
     \\
     \\
 
     07/2021 -- 09/2021
     \begin{wrapfigure}{r}{3.5cm}\href{https://www.cat-amania.fr}{\includegraphics[width=2.2cm]{images/catamania} \includegraphics[width=1cm]{images/porsche}}\end{wrapfigure}
-    & \intitule{\translate{Lead Développeur Java}{Java Lead Developer}} \lieu{Porsche}\\
+    & \intitule{\translate{Lead Développeur Java}{Java Lead Developer}} \lieu{Porsche} \effectif{4} \\
     & \translate{Assurer la maintenance applicative d'un site de réservation.}{Analyzed pending bugs and created fixes.} \\
     & \translate{Mettre en place les outils de surveillance et de scalabilité de la production.}{Set up tools for the application monitoring and scalability.} \\
-    & \environment{SpringBoot, Go, Telegraf, InfluxDB, Grafana} \effectif{4} \\
+    & \environment{SpringBoot, Go, Telegraf, InfluxDB, Grafana} \\
     \\
     \\
 
     08/2018 -- 06/2021
     \begin{wrapfigure}{r}{3.5cm}\href{https://www.cat-amania.fr}{\includegraphics[width=2.2cm]{images/catamania} \includegraphics[width=1cm]{images/imdeo}}\end{wrapfigure}
-    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{IMDEO}\\
+    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{IMDEO} \effectif{12} \\
     & \translate{Analyser les remontées de bug et élaborer les correctifs. Réaliser la maintenance applicative et développer les évolutions du système d'information.}{Analyzed bug reports and created fixes. Operated the application maintenance and developed the evolutions of the information system.} \\
-    & \environment{Tomcat, Java EE, SpringBoot, RabbitMQ, Oracle} \effectif{12} \\
-    \\
+    & \environment{Tomcat, Java EE, SpringBoot, RabbitMQ, Oracle} \\
+    %\\
 \end{rubrique}
 
 \vfill
@@ -312,25 +312,25 @@
 \ligne{0.0mm}
     12/2018 -- 07/2019
     \begin{wrapfigure}{r}{3.5cm}\href{https://www.cat-amania.fr}{\includegraphics[width=2.2cm]{images/catamania} \includegraphics[width=1.1cm]{images/porsche}}\end{wrapfigure}
-    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{Porsche}\\
+    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{Porsche} \effectif{8} \\
     & \translate{Réaliser un site de réservation basé sur une architecture en micro-services. Configurer les environnements d'intégration, recette et production.}{Developed a reservation booking website backed with micro-services architecture. Set up the integration, acceptance and production environments.} \\
-    & \environment{Debian, Apache, Java EE, SpringBoot, Angular, PHP} \effectif{8} \\
+    & \environment{Debian, Apache, Java EE, SpringBoot, Angular, PHP} \\
     \\
     \\
 
     06/2017 -- 08/2018
     \begin{wrapfigure}{r}{3.6cm}\href{https://www.cat-amania.fr}{\includegraphics[width=2.2cm]{images/catamania} \includegraphics[width=1cm]{images/mgen}}\end{wrapfigure}
-    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{MGEN Technologies}\\
+    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{MGEN Technologies} \effectif{5} \\
     & \translate{Assurer le support technique à la numérisation des documents de soins. Développer les services web pour la gestion électronique des documents.}{Provided technical support for the digitization of care related documents. Developed the web services for document management system.} \\
-    & \environment{Windows, Java EE, Sonar} \effectif{5} \\
+    & \environment{Windows, Java EE, Sonar} \\
     \\
     \\
 
     02/2013 -- 06/2017
     \begin{wrapfigure}{r}{3cm}\href{http://www.worldline.com}{\includegraphics[width=2.8cm]{images/worldline}}\end{wrapfigure}
-    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{Worldline}\\
+    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{Worldline} \effectif{12} \\
 	& \translate{Élaborer et diriger le développement d'une solution de tests automatisés permettant l'exécution et le suivi quotidien des tests de non régression.}{Designed, implemented and leaded the development of a functional testing automation engine, for daily monitoring of regression tests.} \\
-    & \environment{RedHat, JBoss, Java EE, Git, Selenium} \effectif{12} \\
+    & \environment{RedHat, JBoss, Java EE, Git, Selenium} \\
     \\
 \end{rubrique}
 
@@ -342,33 +342,33 @@
 \ligne{0.0mm}
     04/2012 -- 07/2012
     \begin{wrapfigure}{r}{2.5cm}\href{http://www.gfi.fr}{\includegraphics[width=2cm]{images/gfi}}\end{wrapfigure}
-    & \stage{\translate{Développeur .NET}{.NET Developer}} \lieu{GFI Informatique}\\
+    & \stage{\translate{Développeur .NET}{.NET Developer}} \lieu{GFI Informatique} \effectif{5} \\
     & \translate{Élaborer l'architecture et développer une application de gestion.}{Designed the architecture and developed an management application.} \\
-    & \environment{C\#, ASP.NET, Linq, NHibernate, Oracle} \effectif{5} \\
+    & \environment{C\#, ASP.NET, Linq, NHibernate, Oracle} \\
     \\
     \\
 
     01/2011 -- 05/2011
     \begin{wrapfigure}{r}{2.5cm}\href{http://fr.atos.net}{\includegraphics[width=1.6cm]{images/atos}}\end{wrapfigure}
-    & \stage{\translate{Développeur Java}{Java Developer}} \lieu{Atos}\\
+    & \stage{\translate{Développeur Java}{Java Developer}} \lieu{Atos} \effectif{4} \\
     & \translate{Mettre en place un serveur d'intégration continue et automatiser les tests.}{Set up a continuous integration server and automated tests.} \\
-    & \environment{Java SE, JUnit, Hudson, Sonar, Selenium} \effectif{4} \\
+    & \environment{Java SE, JUnit, Hudson, Sonar, Selenium} \\
     \\
     \\
 
     06/2010 -- 09/2010
     \begin{wrapfigure}{r}{2.5cm}\href{http://www.groupe-partnaire.fr}{\includegraphics[width=1.6cm]{images/partnaire}}\end{wrapfigure}
-    & \stage{\translate{Analyste Développeur PHP}{PHP Developer Analyst}} \lieu{Groupe Partnaire}\\
+    & \stage{\translate{Analyste Développeur PHP}{PHP Developer Analyst}} \lieu{Groupe Partnaire} \effectif{2} \\
     & \translate{Élaborer un cahier des charges fonctionnel et mettre en place un site web.}{Wrote functional specifications and developed a website.} \\
-    & \environment{PHP, CSS, XML, MySQL} \effectif{2} \\
+    & \environment{PHP, CSS, XML, MySQL} \\
     \\
     \\
 
     09/2009 -- 12/2009
     \begin{wrapfigure}{r}{2cm}\href{http://www.lisica.fr}{\includegraphics[width=1cm]{images/lisica}}\end{wrapfigure}
-    & \stage{\translate{Développeur .NET}{.NET Developer}} \lieu{Lisica Informatique}\\
+    & \stage{\translate{Développeur .NET}{.NET Developer}} \lieu{Lisica Informatique} \effectif{1} \\
     & \translate{Concevoir et réaliser une interface logicielle.}{Designed and created a software user interface.}\\
-    & \environment{VB.NET} \effectif{1} \\
+    & \environment{VB.NET} \\
     \\
 \end{rubrique}
 
@@ -391,25 +391,25 @@
 
     09/2010 -- \translate{Présent}{Present}
     \begin{wrapfigure}{r}{2cm}\href{https://vae-soli.fr}{\includegraphics[width=1.2cm]{images/proxmox}}\end{wrapfigure}
-    & \benevolat{\translate{Administrateur GNU/Linux}{GNU/Linux Administrator}}\\
+    & \benevolat{\translate{Administrateur GNU/Linux}{GNU/Linux Administrator}} \effectif{3} \\
     & \translate{Installer, configurer, sécuriser et maintenir un serveur dédié et ses services.}{Installed, configured, secured and maintained a server and its services.} \\
-    & \environment{Proxmox, Alpine, Debian, Java SE, Nginx, PHP, MariaDB} \effectif{3} \\
+    & \environment{Proxmox, Alpine, Debian, Java SE, Nginx, PHP, MariaDB} \\
     \\
     \\
 
     03/2017 -- 12/2019
     \begin{wrapfigure}{r}{2.2cm}\href{https://www.ip-signal.com}{\includegraphics[width=1.2cm]{images/alpine}}\end{wrapfigure}
-    & \benevolat{\translate{Administrateur GNU/Linux}{GNU/Linux Administrator}}\\
+    & \benevolat{\translate{Administrateur GNU/Linux}{GNU/Linux Administrator}} \effectif{1} \\
     & \translate{Élaborer un service automatisé de monitoring de site web.}{Developed a platform of monitoring-as-a-service.} \\
-    & \environment{Alpine, OpenSMTPD, TomEE, Java EE, Memcached} \effectif{1} \\
+    & \environment{Alpine, OpenSMTPD, TomEE, Java EE, Memcached} \\
     \\
     \\
 
     04/2015 -- 03/2017
     \begin{wrapfigure}{r}{2.1cm}\includegraphics[width=1cm]{images/java}\end{wrapfigure}
-    & \benevolat{\translate{Développeur Java RESTful}{Java RESTful Developer}}\\
+    & \benevolat{\translate{Développeur Java RESTful}{Java RESTful Developer}} \effectif{1} \\
     & \translate{Élaborer un site web basé sur une architecture scalable en micro-services.}{Developed a website based on a scalable architecture with micro-services.} \\
-    & \environment{Java EE, Tomcat, OpenEJB, Nginx, EmberJS} \effectif{1} \\
+    & \environment{Java EE, Tomcat, OpenEJB, Nginx, EmberJS} \\
     \\
 \end{rubrique}
 
