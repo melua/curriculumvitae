@@ -228,41 +228,39 @@
 \end{rubrique}
 
 \interRubrique
-%\interRubrique
-%\interRubrique
+\interRubrique
 
 % SAVOIR
 \begin{rubrique}[3.4cm]{\translate{Compétences}{Skills}\hspace{1em}\dotfill}
 \ligne{0.0mm}
     \translate{Langages}{Languages}
-    & C\# \comppp{Java} \comp{PL/SQL} JSP \compp{PHP} HTML \comp{JS} Go \\
+    & C\# \comppp{Java} \comp{PL/SQL} TypeScript \compp{PHP} HTML \comp{JS} Go \\
     \translate{Frameworks}{Frameworks}
     & \compp{Java EE} \comppp{SpringBoot} AOP \comp{MapStruct} Lombok \comp{JPA} \\
     \translate{Systèmes exp.}{Op. Systems}
-    & \comp{RedHat} \compp{AlpineLinux} \comppp{Debian} OPNsense \compp{Proxmox} \\
+    & \comp{RedHat} \compp{AlpineLinux} \comppp{Debian} \compp{Proxmox} \\
 	\translate{Bases de données}{Databases}
     & \comppp{MariaDB} \comp{MySQL} \compp{Oracle} Redis \\
 	\translate{Serveurs web}{Web Servers}
-    & \compp{Tomcat} \comppp{Nginx} Apache \\
+    & \comp{Tomcat} \comppp{Nginx} \comp{Lighttpd} Apache \\
 	\translate{Serveurs infra.}{Infra. Servers}
-    & \comp{Kafka} KnotDNS \compp{OpenSMTPD} \comp{HAProxy} \\
+    & \comppp{Kafka} KnotDNS \compp{Traefik} \comp{HAProxy} OpenSMTPD \\
     \translate{Dév. collaboratif}{Collaborative dev.}
     & \compp{Subversion} \comppp{Git} Scrum \\
     \translate{Intégr. continue}{Continuous integr.}
-    & \comppp{Gitlab} Sonar \comp{Jenkins} OpenShift \\
+    & \comppp{Gitlab} \compp{Sonar} Jenkins \compp{OpenShift} Ansible \\
 %    \translate{IDE}{IDE}
 %    & \compp{Visual Studio} \comppp{Eclipse} Project \comp{Selenium} \\
 	\translate{Protocoles}{Protocols}
-    & \comp{SSH} IMAP \comppp{HTTP} \compp{TLS} SMTP \compp{DNS} \\
+    & \comp{SSH} IMAP \comppp{HTTP} \compp{TLS} SMTP \compp{DNS} PROXY \\
 %    \translate{Gestion de Projet}{Project Mgmt}
 %    & PMI \compp{UML} Merise \comp{AGILE} Gantt \\
     \translate{Autres}{Others}
-    & \compp{Maven} \comp{DNSSEC} \comppp{REST} Docker \comp{OpenAPI} \\
+    & \compp{Maven} \comp{DNSSEC} \comppp{REST} \compp{Docker} \comp{OpenAPI} AsyncAPI \\
 \end{rubrique}
 
 \interRubrique
 \interRubrique
-%\interRubrique
 
 % SAVOIR-FAIRE
 \begin{rubrique}[3.4cm]{\translate{Expériences}{Career}\hspace{1em}\dotfill}
@@ -271,8 +269,9 @@
     \begin{wrapfigure}{r}{3.6cm}\href{https://www.cat-amania.fr}{\includegraphics[width=2.2cm]{images/catamania} \includegraphics[width=1cm]{images/mgen}}\end{wrapfigure}
     & \intitule{\translate{Lead Développeur Java}{Java Lead Developer}} \lieu{MGEN Technologies} \effectif{6} \\
     & \translate{Elaborer le socle logiciel d'une architecture de micro-services maillés.}{Develop the software framework of a meshed micro-services architecture.} \\
-    & \translate{Mettre en place l'intégration continue, le déploiement continu, la génération automatisée de clients d'API et la concentration des journaux.}{Set up the tools for continuous integration, continuous deployment, API client automated generation and logs consolidation.} \\
-    & \environment{SpringBoot, GitLab, OpenShift, FileBeat, ELK, Kafka} \\
+    & \translate{Mettre en place l'intégration continue, le déploiement continu et la concentration des journaux, dans les environnements on-premise et cloud.}{Set up continuous integration, continuous deployment and log concentration, in on-premises and cloud environments.} \\
+    & \translate{Concevoir les bibliothèques logicielles pour l'intégration de Kafka et la génération automatisée de clients d'API synchrones et asynchrones.}{Create software libraries for Kafka integration and automated generation of synchronous and asynchronous API clients.} \\
+    & \environment{SpringBoot, GitLab, OpenShift, Google Cloud, Elastic, Kafka} \\
     \\
     \\
 
@@ -283,14 +282,6 @@
     & \translate{Mettre en place les outils de surveillance et de scalabilité de la production.}{Set up tools for the application monitoring and scalability.} \\
     & \environment{SpringBoot, Go, Telegraf, InfluxDB, Grafana} \\
     \\
-    \\
-
-    08/2018 -- 06/2021
-    \begin{wrapfigure}{r}{3.5cm}\href{https://www.cat-amania.fr}{\includegraphics[width=2.2cm]{images/catamania} \includegraphics[width=1cm]{images/imdeo}}\end{wrapfigure}
-    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{IMDEO} \effectif{12} \\
-    & \translate{Analyser les remontées de bug et élaborer les correctifs. Réaliser la maintenance applicative et développer les évolutions du système d'information.}{Analyzed bug reports and created fixes. Operated the application maintenance and developed the evolutions of the information system.} \\
-    & \environment{Tomcat, Java EE, SpringBoot, RabbitMQ, Oracle} \\
-    %\\
 \end{rubrique}
 
 \vfill
@@ -304,12 +295,18 @@
 \begin{rubrique}[3.4cm]{\hfill Kévin GUIGNARD}
 \end{rubrique}
 
-%\interRubrique
-%\interRubrique
-
 % SAVOIR-FAIRE
 \begin{rubrique}[3.4cm]{\translate{Expériences (suite)}{Career (suite)}\hspace{1em}\dotfill}
 \ligne{0.0mm}
+
+    08/2018 -- 06/2021
+    \begin{wrapfigure}{r}{3.5cm}\href{https://www.cat-amania.fr}{\includegraphics[width=2.2cm]{images/catamania} \includegraphics[width=1cm]{images/imdeo}}\end{wrapfigure}
+    & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{IMDEO} \effectif{12} \\
+    & \translate{Analyser les remontées de bug et élaborer les correctifs. Réaliser la maintenance applicative et développer les évolutions du système d'information.}{Analyzed bug reports and created fixes. Operated the application maintenance and developed the evolutions of the information system.} \\
+    & \environment{Tomcat, Java EE, SpringBoot, RabbitMQ, Oracle} \\
+    \\
+    \\
+
     12/2018 -- 07/2019
     \begin{wrapfigure}{r}{3.5cm}\href{https://www.cat-amania.fr}{\includegraphics[width=2.2cm]{images/catamania} \includegraphics[width=1.1cm]{images/porsche}}\end{wrapfigure}
     & \intitule{\translate{Développeur Java}{Java Developer}} \lieu{Porsche} \effectif{8} \\
@@ -335,8 +332,7 @@
 \end{rubrique}
 
 \interRubrique
-\interRubrique
-\interRubrique
+%\interRubrique
 
 \begin{rubrique}[3.4cm]{\translate{Stages}{Traineeship}\hspace{1em}\dotfill}
 \ligne{0.0mm}
@@ -362,14 +358,6 @@
     & \translate{Élaborer un cahier des charges fonctionnel et mettre en place un site web.}{Wrote functional specifications and developed a website.} \\
     & \environment{PHP, CSS, XML, MySQL} \\
     \\
-    \\
-
-    09/2009 -- 12/2009
-    \begin{wrapfigure}{r}{2cm}\href{http://www.lisica.fr}{\includegraphics[width=1cm]{images/lisica}}\end{wrapfigure}
-    & \stage{\translate{Développeur .NET}{.NET Developer}} \lieu{Lisica Informatique} \effectif{1} \\
-    & \translate{Concevoir et réaliser une interface logicielle.}{Designed and created a software user interface.}\\
-    & \environment{VB.NET} \\
-    \\
 \end{rubrique}
 
 \vfill
@@ -383,8 +371,18 @@
 \begin{rubrique}[3.4cm]{\hfill Kévin GUIGNARD}
 \end{rubrique}
 
-%\interRubrique
-%\interRubrique
+\begin{rubrique}[3.4cm]{\translate{Stages (suite)}{Traineeship (suite)}\hspace{1em}\dotfill}
+\ligne{0.0mm}
+    09/2009 -- 12/2009
+    \begin{wrapfigure}{r}{2cm}\href{http://www.lisica.fr}{\includegraphics[width=1cm]{images/lisica}}\end{wrapfigure}
+    & \stage{\translate{Développeur .NET}{.NET Developer}} \lieu{Lisica Informatique} \effectif{1} \\
+    & \translate{Concevoir et réaliser une interface logicielle.}{Designed and created a software user interface.}\\
+    & \environment{VB.NET} \\
+    \\
+\end{rubrique}
+
+\interRubrique
+\interRubrique
 
 \begin{rubrique}[3.4cm]{\translate{Projets personnels}{Personal projects}\hspace{1em}\dotfill}
 \ligne{0.0mm}
@@ -415,7 +413,6 @@
 
 \interRubrique
 \interRubrique
-\interRubrique
 
 \begin{rubrique}[2.4cm]{\translate{Formation}{Education}\hspace{1em}\dotfill}
 %\ligne{0.0mm}
@@ -435,7 +432,6 @@
      & \comment{RNCP niv. III -- Bac+2} \\
 \end{rubrique}
 
-\interRubrique
 \interRubrique
 \interRubrique
 
